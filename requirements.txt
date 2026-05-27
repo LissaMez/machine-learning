@@ -1,0 +1,13 @@
+pandas
+numpy
+scikit-learn
+tensorflow
+python-telegram-bot
+python-dotenv
+joblib
+matplotlib
+seaborn
+pytest
+flake8
+black
+nbqa

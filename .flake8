@@ -1,0 +1,13 @@
+[flake8]
+max-line-length = 100
+exclude =
+    .git,
+    __pycache__,
+    venv,
+    .venv,
+    bot/saved_models,
+    data,
+    *.ipynb
+extend-ignore =
+    E203,
+    W503
