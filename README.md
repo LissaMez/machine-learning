@@ -74,12 +74,14 @@ emotion_bot_project/
 │   └── russian/
 │
 ├── original_implementations/
-│   ├── course_work_eng.py
-│   ├── course_work_rus.py
-│   ├── eng-bayes.py
-│   ├── ru-bayes.py
-│   ├── emotion_textcnn.ipynb
-│   └── textcnn_ru.ipynb
+│   ├── english/
+│   │   ├── course_work_eng.py
+│   │   ├── emotion_textcnn.ipynb
+│   │   └── eng-bayes.py
+│   └── russian/
+│       ├── course_work_rus.py
+│       ├── ru-bayes.py
+│       └── textcnn_ru.ipynb
 │
 ├── tests/
 │   ├── conftest.py
