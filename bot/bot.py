@@ -54,7 +54,8 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     except Exception as error:
         await update.message.reply_text(
-            "Произошла ошибка при обработке текста.\n" f"Техническая информация: {error}"
+            "Произошла ошибка при обработке текста.\n"
+            f"Техническая информация: {error}"
         )
 
 

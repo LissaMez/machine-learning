@@ -20,11 +20,15 @@ REQUIRED_MODEL_FILES = [
 
 def test_full_prediction_pipeline():
     missing_files = [
-        file_name for file_name in REQUIRED_MODEL_FILES if not (MODELS_DIR / file_name).exists()
+        file_name
+        for file_name in REQUIRED_MODEL_FILES
+        if not (MODELS_DIR / file_name).exists()
     ]
 
     if missing_files:
-        pytest.skip("Модели ещё не обучены. " "Сначала запусти: python bot/train_models.py")
+        pytest.skip(
+            "Модели ещё не обучены. " "Сначала запусти: python bot/train_models.py"
+        )
 
     user_text = "Мне сегодня очень грустно и одиноко"
 

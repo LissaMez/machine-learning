@@ -61,7 +61,9 @@ def train_naive_bayes(train_df, test_df):
 def train_logistic_regression(train_df, test_df):
     print("ОБУЧЕНИЕ LOGISTIC REGRESSION")
 
-    vectorizer = TfidfVectorizer(max_features=5000, ngram_range=(1, 2), min_df=2, max_df=0.9)
+    vectorizer = TfidfVectorizer(
+        max_features=5000, ngram_range=(1, 2), min_df=2, max_df=0.9
+    )
 
     X_train = vectorizer.fit_transform(train_df["text"])
     X_test = vectorizer.transform(test_df["text"])
@@ -101,8 +103,12 @@ def train_textcnn(train_df, test_df):
     X_train_seq = tokenizer.texts_to_sequences(train_df["text"])
     X_test_seq = tokenizer.texts_to_sequences(test_df["text"])
 
-    X_train = pad_sequences(X_train_seq, maxlen=max_len, padding="post", truncating="post")
-    X_test = pad_sequences(X_test_seq, maxlen=max_len, padding="post", truncating="post")
+    X_train = pad_sequences(
+        X_train_seq, maxlen=max_len, padding="post", truncating="post"
+    )
+    X_test = pad_sequences(
+        X_test_seq, maxlen=max_len, padding="post", truncating="post"
+    )
 
     label_encoder = LabelEncoder()
     y_train = label_encoder.fit_transform(train_df["label"])
@@ -112,7 +118,9 @@ def train_textcnn(train_df, test_df):
 
     model = Sequential(
         [
-            Embedding(input_dim=max_words, output_dim=embedding_dim, input_length=max_len),
+            Embedding(
+                input_dim=max_words, output_dim=embedding_dim, input_length=max_len
+            ),
             Conv1D(filters=filters, kernel_size=kernel_size, activation="relu"),
             GlobalMaxPooling1D(),
             Dense(units=64, activation="relu"),
@@ -121,7 +129,9 @@ def train_textcnn(train_df, test_df):
         ]
     )
 
-    model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
+    model.compile(
+        optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"]
+    )
 
     model.summary()
 

@@ -16,14 +16,18 @@ def load_all_models():
     models = {}
 
     models["naive_bayes_model"] = joblib.load(MODELS_DIR / "naive_bayes_model.pkl")
-    models["naive_bayes_vectorizer"] = joblib.load(MODELS_DIR / "naive_bayes_vectorizer.pkl")
+    models["naive_bayes_vectorizer"] = joblib.load(
+        MODELS_DIR / "naive_bayes_vectorizer.pkl"
+    )
 
     models["logreg_model"] = joblib.load(MODELS_DIR / "logreg_model.pkl")
     models["logreg_vectorizer"] = joblib.load(MODELS_DIR / "logreg_vectorizer.pkl")
 
     models["textcnn_model"] = load_model(MODELS_DIR / "textcnn_model.keras")
     models["textcnn_tokenizer"] = joblib.load(MODELS_DIR / "textcnn_tokenizer.pkl")
-    models["textcnn_label_encoder"] = joblib.load(MODELS_DIR / "textcnn_label_encoder.pkl")
+    models["textcnn_label_encoder"] = joblib.load(
+        MODELS_DIR / "textcnn_label_encoder.pkl"
+    )
     models["textcnn_max_len"] = joblib.load(MODELS_DIR / "textcnn_max_len.pkl")
 
     return models
