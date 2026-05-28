@@ -40,5 +40,3 @@ htmlcov/
 # Project outputs
 results/
 plots/
-
-.github/workflows/ci.yml
